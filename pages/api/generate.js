@@ -50,8 +50,7 @@ export default async function (req, res) {
 function generatePrompt(input) {
     const capitalizedinput =
     input[0].toUpperCase() + input.slice(1).toLowerCase();
-    return `
-    Suggest three captions.
+    return `Suggest three captions.
     Input: Chocolate
     Captions: Taste that melts your heart, A chocolate company, Awesome chocolates
     Input: Speaker
