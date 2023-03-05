@@ -70,7 +70,7 @@ export default function Home() {
                 <input
                     type="text"
                     name="ads"
-                    placeholder="Ad for Music"
+                    placeholder="Caption for Music"
                     value={captionInput}
                     onChange={(e) => setCaptionInput(e.target.value)}
                 />
@@ -81,7 +81,7 @@ export default function Home() {
             <br />
             <br />
 
-            <h4>Describe your Image</h4>
+            {/* <h4>Describe your Image</h4>
             <form onSubmit={onImageTextSubmit}>
                 <input
                     type="text"
@@ -91,7 +91,7 @@ export default function Home() {
                     onChange={(e) => setImageTextInput(e.target.value)}
                 />
                 <input type="submit" value="Generate Image" />
-            </form>
+            </form> */}
         </main>
         </div>
     );
