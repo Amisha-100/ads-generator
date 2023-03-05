@@ -6,7 +6,7 @@ export default function Home() {
     const [captionInput, setCaptionInput] = useState("");
     const [imageTextInput, setImageTextInput] = useState("");
     const [result, setTextResult] = useState();
-    const [imgResult, setImageResult] = useState();
+    const [imageResult, setImageResult] = useState();
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -35,7 +35,7 @@ export default function Home() {
     async function onImageTextSubmit(event) {
         event.preventDefault();
         try {
-        const response = await fetch("/api/imageGenerate", {
+        const response = await fetch("/api/generateImage", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -48,13 +48,15 @@ export default function Home() {
             throw data.error || new Error(`Request failed with status ${response.status}`);
         }
 
-        setImageResult(data.result);
+        setImageResult(data.data);
         setImageTextInput("");
         } catch(error) {
         console.error(error);
         alert(error.message);
         }
     }
+    
+    console.log(imageResult)
 
     return (
         <div>
@@ -65,33 +67,38 @@ export default function Home() {
 
         <main className={styles.main}>
             <img src="/adon.png" className={styles.icon} />
+            
             <h4>Caption for your Ad</h4>
             <form onSubmit={onSubmit}>
                 <input
                     type="text"
-                    name="ads"
+                    name="caption"
                     placeholder="Caption for Music"
                     value={captionInput}
                     onChange={(e) => setCaptionInput(e.target.value)}
                 />
                 <input type="submit" value="Generate Caption" />
             </form>
+            <br/>
             <div className={styles.result}>{result}</div>
             
-            <br />
-            <br />
+            <br/>
+            <br/>
 
-            {/* <h4>Describe your Image</h4>
+            <h4>Describe your Image</h4>
             <form onSubmit={onImageTextSubmit}>
                 <input
                     type="text"
-                    name="ads"
+                    name="image_text"
                     placeholder="A blue sky with an aeroplane"
-                    value={captionInput}
+                    value={imageTextInput}
                     onChange={(e) => setImageTextInput(e.target.value)}
                 />
                 <input type="submit" value="Generate Image" />
-            </form> */}
+            </form>
+            <br/>
+            <div className={styles.imageResult}><img src={imageResult} /></div>
+
         </main>
         </div>
     );

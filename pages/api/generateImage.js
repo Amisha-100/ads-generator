@@ -54,10 +54,6 @@ export default async function (req, res) {
 }
 
 function generateImagePrompt(input) {
-    const capitalizedinput =
-    input[0].toUpperCase() + input.slice(1).toLowerCase();
-    return `Suggest three captions.
-
-Input: ${capitalizedinput}
-Captions:`;
+    const capitalizedinput = input[0].toUpperCase() + input.slice(1).toLowerCase();
+    return `Generate Image for Input: ${capitalizedinput}`;
 }

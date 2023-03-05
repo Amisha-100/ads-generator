@@ -71,7 +71,7 @@ font-style: normal;
     cursor: pointer;
 }
 
-.main .result {
+.main .result .imageResult {
     font-weight: bold;
     margin-top: 40px;
 }
