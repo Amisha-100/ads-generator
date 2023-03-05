@@ -67,6 +67,7 @@ export default function Home() {
 
         <main className={styles.main}>
             <img src="/adon.png" className={styles.icon} />
+            <br/>
             
             <h4>Caption for your Ad</h4>
             <form onSubmit={onSubmit}>
