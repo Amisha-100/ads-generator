@@ -1,4 +1,4 @@
-# OpenAI API Quickstart - Node.js Ads generator
+# OpenAPI - Ads generator
 
 ## Setup
 
