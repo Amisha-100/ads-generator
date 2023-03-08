@@ -27,12 +27,18 @@ export default function Carousel1(props){
             </div>
         ))}
         </Carousel>
-        {/* <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} selectedItem={props.headlineArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
-            {props.headlineArray.map((x,idx)=>(
-                <div key={idx} className="legend">
-                    {x}
-                </div>))}
-        </Carousel> */}
+        <br/>
+
+        <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} selectedItem={props.headlineArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
+            {props.headlineArray.map(
+                (x,idx)=> (
+                <div key={idx}>
+                    <p>{x}</p>
+                    <br/>
+                    <br/>
+                </div>
+            ))}
+        </Carousel>
         </div>
         
     )
