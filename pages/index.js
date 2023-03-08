@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import Carousel1 from "./Carousel";
 
 export default function Home() {
     const [inputText, setInputText] = useState("");
@@ -81,11 +82,10 @@ export default function Home() {
                 </form>
                 <br/>
 
-                <div key='image' className={styles.imageResult}>
-                    {imageResult.map(
-                        (img_url, index)=> <p key={index}><img src={img_url}/></p>
-                    )}
-                </div>
+                    <div>
+                        <Carousel1 images={imageResult}/>
+                    </div>
+        
                 <br/>
 
                 <div className={styles.result}>
