@@ -89,9 +89,13 @@ font-style: normal;
     cursor: pointer;
 }
 
-.main .result .imageResult {
+.main .result {
     font-weight: bold;
     margin-top: 40px;
+}
+
+.imageResult {
+    margin-top: 40px; 
 }
 
 .footer {

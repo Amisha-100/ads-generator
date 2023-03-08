@@ -36,11 +36,13 @@ export default async function (req, res) {
             {
                 model: "text-davinci-003",
                 prompt: generatePrompt(input),
-                temperature: 0.8
+                temperature: 0.8,
+                max_tokens: 100,
             }
         );
-        console.log("YAYA", completion.data)
-        res.status(200).json({ result: completion.data.choices[0].text });
+        res.status(200).json(
+            { result: completion.data.choices[0].text }
+        );
     } catch(error) {
         if (error.response) {
             console.error(error.response.status, error.response.data);
@@ -60,13 +62,13 @@ export default async function (req, res) {
 
 function generatePrompt(input) {
     const capitalizedinput = input[0].toUpperCase() + input.slice(1).toLowerCase();
-    console.log("LOOK1", input)
-    console.log("LOOK1", capitalizedinput)
-    return `Suggest 5 creative captions for social media posts.
-    Input: Chocolate
+    return `Suggest 5 creative captions.
+    Input: Captions for Chocolate
     Captions: Taste that melts your heart, Love is every bite, Celebrate your day, Chocolate kills every bad mood, It's Coco day!
-    Input: Speaker
+    Input: Captions for Speaker
     Captions: Groove in music, Dance Dance Dance, It's partaaayy time, Wohooo Let's rock!, Get lost in the world of music!!
-    Input: ${capitalizedinput}
+    Input: Captions for Awesome Donuts
+    Captions: Donut worry, be happy!, Donut let anyone dull your sparkle!, Life is short, eat the donut!, Donut judge me until you've tried these!, Donut dream it, be it!
+    Input: Captions for ${capitalizedinput}
     Captions:`;
 }

@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 export default function Home() {
     const [inputText, setInputText] = useState("");
     const [result, setTextResult] = useState();
-    const [imageResult, setImageResult] = useState();
+    const [imageResult, setImageResult] = useState([]);
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -40,8 +40,10 @@ export default function Home() {
                 throw data2.error || new Error(`Request failed with status ${response2.status}`);
             }
 
+            let arrayOfImages = data2.data.map(a => a.url);
+
             setTextResult(data1.result);
-            setImageResult(data2.data);
+            setImageResult(arrayOfImages);
         } catch(error) {
             console.error(error);
             alert(error.message);
@@ -78,10 +80,14 @@ export default function Home() {
                     <input type="submit" value="Generate" />
                 </form>
                 <br/>
-                <div className={styles.imageResult}>
-                    <img src={imageResult} />
+
+                <div key='image' className={styles.imageResult}>
+                    {imageResult.map(
+                        (img_url, index)=> <p key={index}><img src={img_url}/></p>
+                    )}
                 </div>
                 <br/>
+
                 <div className={styles.result}>
                     {result}
                 </div>

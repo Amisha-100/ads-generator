@@ -38,12 +38,12 @@ export default async function (req, res) {
             }
         );
     
-        const imageUrl = response.data.data[0].url;
+        const datas = response.data.data;
     
         res.status(200).json(
             {
                 success: true,
-                data: imageUrl
+                data: datas
             }
         );
     } catch (error) {
