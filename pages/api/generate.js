@@ -12,7 +12,7 @@ export default async function (req, res) {
         res.status(500).json(
             {
                 error: {
-                    message: "OpenAI API key not configured, please follow instructions in README.md",
+                    message: "OpenAI API key not configured, please follow instructions in README.md"
                 }
             }
         );
@@ -24,7 +24,7 @@ export default async function (req, res) {
         res.status(400).json(
             {
                 error: {
-                    message: "Please enter a valid domain",
+                    message: "Please enter a valid domain"
                 }
             }
         );
@@ -36,9 +36,10 @@ export default async function (req, res) {
             {
                 model: "text-davinci-003",
                 prompt: generatePrompt(input),
-                temperature: 0.8,
+                temperature: 0.8
             }
         );
+        console.log("YAYA", completion.data)
         res.status(200).json({ result: completion.data.choices[0].text });
     } catch(error) {
         if (error.response) {
@@ -49,7 +50,7 @@ export default async function (req, res) {
             res.status(500).json(
                 {
                     error: {
-                        message: 'An error occurred during your request.',
+                        message: 'An error occurred during your request.'
                     }
                 }
             );
@@ -61,11 +62,11 @@ function generatePrompt(input) {
     const capitalizedinput = input[0].toUpperCase() + input.slice(1).toLowerCase();
     console.log("LOOK1", input)
     console.log("LOOK1", capitalizedinput)
-    return `Suggest one caption.
+    return `Suggest 5 creative captions for social media posts.
     Input: Chocolate
-    Captions: Taste that melts your heart
+    Captions: Taste that melts your heart, Love is every bite, Celebrate your day, Chocolate kills every bad mood, It's Coco day!
     Input: Speaker
-    Captions: Groove in music
+    Captions: Groove in music, Dance Dance Dance, It's partaaayy time, Wohooo Let's rock!, Get lost in the world of music!!
     Input: ${capitalizedinput}
     Captions:`;
 }

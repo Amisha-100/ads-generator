@@ -42,7 +42,6 @@ export default function Home() {
 
             setTextResult(data1.result);
             setImageResult(data2.data);
-            // setinputText("");
         } catch(error) {
             console.error(error);
             alert(error.message);
