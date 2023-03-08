@@ -5,7 +5,7 @@ import Carousel1 from "./Carousel";
 
 export default function Home() {
     const [inputText, setInputText] = useState("");
-    const [result, setTextResult] = useState();
+    const [result, setTextResult] = useState('');
     const [imageResult, setImageResult] = useState([]);
 
     async function onSubmit(event) {
@@ -33,7 +33,7 @@ export default function Home() {
 
             const data1 = await response1.json();
             const data2 = await response2.json();
-
+            
             if (response1.status !== 200) {
                 throw data1.error || new Error(`Request failed with status ${response1.status}`);
             }
@@ -42,15 +42,18 @@ export default function Home() {
             }
 
             let arrayOfImages = data2.data.map(a => a.url);
+            let temp = data1.result;
+            let headlineArray = temp.split(',');
 
-            setTextResult(data1.result);
+            setTextResult(headlineArray);
             setImageResult(arrayOfImages);
         } catch(error) {
             console.error(error);
             alert(error.message);
         }
+        console.log(result)
     }
-    
+
     return (
         <div>
             <Head>
@@ -83,14 +86,14 @@ export default function Home() {
                 <br/>
 
                     <div>
-                        <Carousel1 images={imageResult}/>
+                        <Carousel1 images={imageResult} headlineArray={result}/>
                     </div>
         
                 <br/>
-
+{/* 
                 <div className={styles.result}>
                     {result}
-                </div>
+                </div> */}
 
                 <footer className={styles.footer}>
                     Made with 💜 by <b>Team Asteroids</b>
