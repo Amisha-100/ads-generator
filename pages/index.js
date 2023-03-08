@@ -60,47 +60,57 @@ export default function Home() {
 
     return (
         <div>
-        <Head>
-            <title>OpenAI Ads Generator</title>
-            <link rel="icon" href="/adon.png" />
-        </Head>
+            <Head>
+                <title>Adon: Ads Generator</title>
+                <link rel="icon" href="/adon-logo.png" />
+            </Head>
 
-        <main className={styles.main}>
-            <img src="/adon.png" className={styles.icon} />
-            <br/>
-            
-            <h4>Caption for your Ad</h4>
-            <form onSubmit={onSubmit}>
-                <input
-                    type="text"
-                    name="caption"
-                    placeholder="Caption for Music"
-                    value={captionInput}
-                    onChange={(e) => setCaptionInput(e.target.value)}
-                />
-                <input type="submit" value="Generate Caption" />
-            </form>
-            <br/>
-            <div className={styles.result}>{result}</div>
-            
-            <br/>
-            <br/>
+            <main className={styles.main}>
+                <img src="/adon.png" className={styles.icon} />
+                <br/>
 
-            <h4>Describe your Image</h4>
-            <form onSubmit={onImageTextSubmit}>
-                <input
-                    type="text"
-                    name="image_text"
-                    placeholder="A blue sky with an aeroplane"
-                    value={imageTextInput}
-                    onChange={(e) => setImageTextInput(e.target.value)}
-                />
-                <input type="submit" value="Generate Image" />
-            </form>
-            <br/>
-            <div className={styles.imageResult}><img src={imageResult} /></div>
+                <p className={styles.text1}>
+                    AI-powered social media assistant
+                </p>
+                <p className={styles.text2}>
+                    Make cool campaings in few clicks with Adon!
+                </p>
 
-        </main>
+                <h4>Caption for your Ad</h4>
+                <form onSubmit={onSubmit}>
+                    <input
+                        type="text"
+                        name="caption"
+                        placeholder="Caption for Music"
+                        value={captionInput}
+                        onChange={(e) => setCaptionInput(e.target.value)}
+                    />
+                    <input type="submit" value="Generate Caption" />
+                </form>
+                <br/>
+                <div className={styles.result}>{result}</div>
+                
+                <br/>
+                <br/>
+
+                <h4>Describe your Image</h4>
+                <form onSubmit={onImageTextSubmit}>
+                    <input
+                        type="text"
+                        name="image_text"
+                        placeholder="A blue sky with an aeroplane"
+                        value={imageTextInput}
+                        onChange={(e) => setImageTextInput(e.target.value)}
+                    />
+                    <input type="submit" value="Generate Image" />
+                </form>
+                <br/>
+                <div className={styles.imageResult}><img src={imageResult} /></div>
+
+                <footer className={styles.footer}>
+                    Made with 💜 by <b>Team Asteroids</b>
+                </footer>
+            </main>
         </div>
     );
 }

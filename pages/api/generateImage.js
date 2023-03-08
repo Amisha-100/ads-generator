@@ -28,7 +28,7 @@ export default async function (req, res) {
     try {
         const response = await openai.createImage({
             prompt: generateImagePrompt(input),
-            n: 1,
+            n: 10,
             size: "512x512",
         });
     

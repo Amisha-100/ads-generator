@@ -15,6 +15,14 @@ font-weight: bold;
 font-style: normal;
 }
 
+.icon {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 30px 0;
+}
+
 .main,
 .main input {
     font-size: 16px;
@@ -27,11 +35,21 @@ font-style: normal;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 60px;
 }
 
-.main .icon {
-    width: 100px;
+.text1 {
+    font-size: 15px;
+    color: #090909;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+    margin-bottom: -10px;
+}
+
+.text2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #831fee;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+    margin-bottom: 38px;
 }
 
 .main h3 {
@@ -74,4 +92,9 @@ font-style: normal;
 .main .result .imageResult {
     font-weight: bold;
     margin-top: 40px;
+}
+
+.footer {
+    font-size: 11px; 
+    margin-top: 150px;
 }
