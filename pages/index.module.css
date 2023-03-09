@@ -55,15 +55,16 @@ font-style: normal;
 }
 
 .text3 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     color: #090909;
     font-family: "ColfaxAI", Helvetica, sans-serif;
-    margin-bottom: 12px;
+    margin-left: -75px;
+    margin-bottom: 1px;
 }
 
 .text4 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: #831fee;
     font-family: "ColfaxAI", Helvetica, sans-serif;
