@@ -18,26 +18,38 @@ export default function Carousel1(props){
     return (
         <div>
         <Carousel showArrows={true} showThumbs={true} autoPlay={false} infiniteLoop={true} selectedItem={props.images[carouselIndex]} onChange={handleChange} className={styles.carouselContainer}>
-        {props.images.map(
-        (img_url, index)=> (
-            <div key={index}>
-                <img src={img_url}/>
-                {/* <p className="legend">{props.headlineArray[index%5]}</p> */}
-            </div>
-        ))}
+            {props.images.map(
+            (img_url, index)=> (
+                <div key={index}>
+                    <img src={img_url}/>
+                    {/* <p className="legend">{props.captionArray[index%5]}</p> */}
+                </div>
+            ))}
         </Carousel>
         <br/>
 
-        <Carousel showArrows={true} showThumbs={false} autoPlay={false} infiniteLoop={true} selectedItem={props.headlineArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
-            {props.headlineArray.map(
-                (x,idx)=> (
+        <Carousel showArrows={true} showThumbs={false} autoPlay={false} infiniteLoop={true} selectedItem={props.captionArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
+            {props.captionArray.map(
+                (value,idx) => (
                 <div key={idx}>
-                    <p>{x}</p>
+                    <p>{value}</p>
                     <br/>
                     <br/>
                 </div>
             ))}
         </Carousel>
+
+        <Carousel showArrows={true} showThumbs={false} autoPlay={false} infiniteLoop={true} selectedItem={props.hashtagArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
+            {props.hashtagArray.map(
+                (value,idx) => (
+                <div key={idx}>
+                    <p>{value}</p>
+                    <br/>
+                    <br/>
+                </div>
+            ))}
+        </Carousel>
+
         </div>
         
     )

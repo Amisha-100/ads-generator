@@ -40,18 +40,33 @@ font-style: normal;
 }
 
 .text1 {
-    font-size: 15px;
+    font-size: 20px;
     color: #090909;
     font-family: "ColfaxAI", Helvetica, sans-serif;
     margin-bottom: -10px;
 }
 
 .text2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     color: #831fee;
     font-family: "ColfaxAI", Helvetica, sans-serif;
     margin-bottom: 38px;
+}
+
+.text3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #090909;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+    margin-bottom: 12px;
+}
+
+.text4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #831fee;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
 }
 
 .main h3 {
