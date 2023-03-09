@@ -105,7 +105,7 @@ export default function Home() {
                         value = {colorText}
                         onChange = {(e) => setcolorText(e.target.value)}
                     />
-                    <p className={styles.text4}>What do you wnat to promote?</p>
+                    <p className={styles.text4}>What do you want to promote?</p>
                     <input
                         type = "text"
                         name = "campaign_details"
