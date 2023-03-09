@@ -90,7 +90,7 @@ export default function Home() {
                     </div>
         
                 <br/>
-{/* 
+                {/* 
                 <div className={styles.result}>
                     {result}
                 </div> */}

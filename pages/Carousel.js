@@ -14,8 +14,7 @@ export default function Carousel1(props){
     function handleTextChange(index){
         setTextIndex(index);
     }
-    console.log(props.images)
-    console.log(props.headlineArray)
+
     return (
         <div>
         <Carousel showArrows={true} showThumbs={true} autoPlay={false} infiniteLoop={true} selectedItem={props.images[carouselIndex]} onChange={handleChange} className={styles.carouselContainer}>
