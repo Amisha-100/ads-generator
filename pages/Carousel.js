@@ -18,18 +18,18 @@ export default function Carousel1(props){
     console.log(props.headlineArray)
     return (
         <div>
-        <Carousel showArrows={true} showThumbs={true} autoPlay={true} infiniteLoop={true} selectedItem={props.images[carouselIndex]} onChange={handleChange} className={styles.carouselContainer}>
+        <Carousel showArrows={true} showThumbs={true} autoPlay={false} infiniteLoop={true} selectedItem={props.images[carouselIndex]} onChange={handleChange} className={styles.carouselContainer}>
         {props.images.map(
         (img_url, index)=> (
             <div key={index}>
                 <img src={img_url}/>
-                <p className="legend">{props.headlineArray[index%5]}</p>
+                {/* <p className="legend">{props.headlineArray[index%5]}</p> */}
             </div>
         ))}
         </Carousel>
         <br/>
 
-        <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true} selectedItem={props.headlineArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
+        <Carousel showArrows={true} showThumbs={false} autoPlay={false} infiniteLoop={true} selectedItem={props.headlineArray[textIndex]} onChange={handleTextChange} className={styles.carouselContainer}>
             {props.headlineArray.map(
                 (x,idx)=> (
                 <div key={idx}>

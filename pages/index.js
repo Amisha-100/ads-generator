@@ -5,7 +5,7 @@ import Carousel1 from "./Carousel";
 
 export default function Home() {
     const [inputText, setInputText] = useState("");
-    const [result, setTextResult] = useState('');
+    const [result, setTextResult] = useState([]);
     const [imageResult, setImageResult] = useState([]);
 
     async function onSubmit(event) {
