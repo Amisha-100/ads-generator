@@ -5,8 +5,9 @@ import styles from "./index.module.css";
 import Carousel1 from "./components/Carousel";
 
 export default function Home() {
-    const [colorText, setcolorText] = useState("");
     const [campaignText, setcampaignText] = useState("");
+    const [imageText, setimageText] = useState("");
+    const [colorText, setcolorText] = useState("");
     const [toneText, settoneText] = useState("");
     const [captionResult, setCaptionResult] = useState([]);
     const [imageResult, setImageResult] = useState([]);
@@ -24,14 +25,24 @@ export default function Home() {
                     body: JSON.stringify({ input: campaignText + ' in ' + toneText + ' manner' })
                 }
             );
-
+            
+            let imageInputString = ''
+            if (colorText == '' && imageText == '') {
+                imageInputString = campaignText;
+            } else if (colorText == '' && imageText != '') {
+                imageInputString = campaignText + ', ' + imageText;
+            } else if (colorText != '' && imageText == '') {
+                imageInputString = campaignText + ' in ' + colorText + ' color';
+            } else {
+                imageInputString = campaignText + ', ' + imageText + ' in ' + colorText + ' color';
+            }
             const response2 = await fetch(
                 "/api/generateImages", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ input: campaignText + ' in ' + colorText + ' color' })
+                    body: JSON.stringify({ input: imageInputString })
                 }
             );
 
@@ -98,19 +109,11 @@ export default function Home() {
 
                 <p className={styles.text3}>Mention campaign details:</p>
                 <form onSubmit={onSubmit}>
-                    <p className={styles.text4}>Brand/Campaign color</p>
-                    <input
-                        type = "text"
-                        name = "brand_color"
-                        placeholder = "Purple, Blue, White"
-                        value = {colorText}
-                        onChange = {(e) => setcolorText(e.target.value)}
-                    />
                     <p className={styles.text4}>What do you want to promote?</p>
                     <input
                         type = "text"
                         name = "campaign_details"
-                        placeholder = "Purple donuts with chocolates around"
+                        placeholder = "Donuts with chocolates"
                         value = {campaignText}
                         onChange = {(e) => setcampaignText(e.target.value)}
                     />
@@ -118,9 +121,25 @@ export default function Home() {
                     <input
                         type = "text"
                         name = "communication_tone"
-                        placeholder = "Friendly, Funny, Professional, Rude"
+                        placeholder = "Friendly, Funny, Professional"
                         value = {toneText}
                         onChange = {(e) => settoneText(e.target.value)}
+                    />
+                    <p className={styles.text4}>Describe the image you want (optional)</p>
+                    <input
+                        type = "text"
+                        name = "image_details"
+                        placeholder = "Describe with proper details"
+                        value = {imageText}
+                        onChange = {(e) => setimageText(e.target.value)}
+                    />    
+                    <p className={styles.text4}>Any color choices (optional)</p>
+                    <input
+                        type = "text"
+                        name = "brand_color"
+                        placeholder = "Purple, Blue, White, Golden, Silver"
+                        value = {colorText}
+                        onChange = {(e) => setcolorText(e.target.value)}
                     />
                     <input type="submit" value="Generate" />
                 </form>

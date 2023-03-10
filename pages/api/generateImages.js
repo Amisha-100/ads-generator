@@ -65,5 +65,6 @@ export default async function (req, res) {
 
 function generateImagePrompt(input) {
     const capitalizedinput = input[0].toUpperCase() + input.slice(1).toLowerCase();
-    return `Generate Image for Input: ${capitalizedinput}`;
+    const imageQuality = ' perfect composition, realistic, super detailed, 8k, high quality, trending art, sharp focus, studio photo, intricate details, highly detailed'
+    return `Generate Image for Input: ${capitalizedinput + imageQuality}`;
 }
