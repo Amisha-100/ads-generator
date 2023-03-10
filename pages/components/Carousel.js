@@ -1,7 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel";
 import { useState } from "react";
-import styles from "./index.module.css";
+import styles from "../index.module.css";
 
 export default function Carousel1(props){
     const [carouselIndex, setCarouselIndex] = useState();
