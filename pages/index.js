@@ -147,6 +147,7 @@ export default function Home() {
                     </div>
                     <div className={styles.flexImageChild}>
                         <p className={styles.text3}>Generated Data:</p>
+                        <p className={styles.text4}>Create Cool Campaigns 🔥, Chill 😎, and Celebrate 🥳</p>
                         <div>
                             <Carousel1 images={imageResult} captionArray={captionResult} hashtagArray={hashtagResult}/>
                         </div>
