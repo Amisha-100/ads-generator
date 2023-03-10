@@ -106,50 +106,52 @@ export default function Home() {
                 <p className={styles.text2}>
                     Make cool campaings in few clicks with Adon!
                 </p>
-
-                <p className={styles.text3}>Mention campaign details:</p>
-                <form onSubmit={onSubmit}>
-                    <p className={styles.text4}>What do you want to promote?</p>
-                    <input
-                        type = "text"
-                        name = "campaign_details"
-                        placeholder = "Donuts with chocolates"
-                        value = {campaignText}
-                        onChange = {(e) => setcampaignText(e.target.value)}
-                    />
-                    <p className={styles.text4}>Communication tone</p>
-                    <input
-                        type = "text"
-                        name = "communication_tone"
-                        placeholder = "Friendly, Funny, Professional"
-                        value = {toneText}
-                        onChange = {(e) => settoneText(e.target.value)}
-                    />
-                    <p className={styles.text4}>Describe the image you want (optional)</p>
-                    <input
-                        type = "text"
-                        name = "image_details"
-                        placeholder = "Describe with proper details"
-                        value = {imageText}
-                        onChange = {(e) => setimageText(e.target.value)}
-                    />    
-                    <p className={styles.text4}>Any color choices (optional)</p>
-                    <input
-                        type = "text"
-                        name = "brand_color"
-                        placeholder = "Purple, Blue, White, Golden, Silver"
-                        value = {colorText}
-                        onChange = {(e) => setcolorText(e.target.value)}
-                    />
-                    <input type="submit" value="Generate" />
-                </form>
-                <br/>
-
-                    <div>
-                        <Carousel1 images={imageResult} captionArray={captionResult} hashtagArray={hashtagResult}/>
+                <div className={styles.flexParent}>
+                    <div className={styles.flexChild}>
+                        <p className={styles.text3}>Mention campaign details:</p>
+                        <form onSubmit={onSubmit}>
+                            <p className={styles.text4}>What do you want to promote?</p>
+                            <input
+                                type = "text"
+                                name = "campaign_details"
+                                placeholder = "Donuts with chocolates"
+                                value = {campaignText}
+                                onChange = {(e) => setcampaignText(e.target.value)}
+                            />
+                            <p className={styles.text4}>Communication tone</p>
+                            <input
+                                type = "text"
+                                name = "communication_tone"
+                                placeholder = "Friendly, Funny, Professional"
+                                value = {toneText}
+                                onChange = {(e) => settoneText(e.target.value)}
+                            />
+                            <p className={styles.text4}>Describe the image you want (optional)</p>
+                            <input
+                                type = "text"
+                                name = "image_details"
+                                placeholder = "Describe with proper details"
+                                value = {imageText}
+                                onChange = {(e) => setimageText(e.target.value)}
+                            />    
+                            <p className={styles.text4}>Any color choices (optional)</p>
+                            <input
+                                type = "text"
+                                name = "brand_color"
+                                placeholder = "Purple, Blue, White, Golden, Silver"
+                                value = {colorText}
+                                onChange = {(e) => setcolorText(e.target.value)}
+                            />
+                            <input type="submit" value="Generate" />
+                        </form>
                     </div>
-        
-                <br/>
+                    <div className={styles.flexImageChild}>
+                        <p className={styles.text3}>Generated Data:</p>
+                        <div>
+                            <Carousel1 images={imageResult} captionArray={captionResult} hashtagArray={hashtagResult}/>
+                        </div>
+                    </div>
+                </div>
                 {/* 
                 <div className={styles.result}>
                     {result}
