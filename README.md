@@ -1,4 +1,4 @@
-# OpenAPI - Ads generator
+# Ads generator
 
 ## Setup
 
