@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
 
-import Carousel1 from "./components/Carousel";
+import Carousel1 from "../components/CarouselView";
 
 export default function Home() {
     const [campaignText, setcampaignText] = useState("");
